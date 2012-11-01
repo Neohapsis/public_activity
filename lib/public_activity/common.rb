@@ -111,7 +111,7 @@ module PublicActivity
       end
       key = (options[:key] ||
             self.activity_key ||
-            (self.class.name.parameterize('_') + "." + action.to_s)).to_s
+            (self.class.base_class.name.parameterize('_') + "." + action.to_s)).to_s
 
       # user responsible for the activity
       owner = PublicActivity.resolve_value(self,
